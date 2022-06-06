@@ -150,6 +150,7 @@ public class PlayerScript : MonoBehaviour
             {
                 
                 fishingGame.SetActive(true);
+                fishingGame.GetComponent<Transform>().position = gameObject.GetComponent<Transform>().position-new Vector3(5f,0f,0f);
 
             }
             else
