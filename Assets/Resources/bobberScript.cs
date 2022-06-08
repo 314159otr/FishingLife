@@ -92,11 +92,13 @@ public class bobberScript : MonoBehaviour
     }
     public void Volver(GameObject jugador)
     {
+        
         StartCoroutine(vuelta(jugador));
     }
     IEnumerator vuelta(GameObject jugador)
     {
         
+        jugador.GetComponent<PlayerScript>().recogiendo = true;
         if (direccion == "Derecha")
         {
             rb2d.velocity = new Vector2(-5, 4);
@@ -130,7 +132,9 @@ public class bobberScript : MonoBehaviour
         {
             jugador.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_Respirar_Arriba");
         }
-
+        
+        jugador.GetComponent<PlayerScript>().recogiendo = false;
+        jugador.GetComponent<PlayerScript>().picado = false;
         Destroy(gameObject);
     }
 

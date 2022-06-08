@@ -14,10 +14,11 @@ public class PlayerScript : MonoBehaviour
     public GameObject bobber;
     private bool pescando;
     public bool picado;
+    public bool recogiendo;
     [SerializeField] GameObject fishingGame;
 
     public string ultimaPosicion;
-
+    
     private const string ARRIBA = "Arriba";
     private const string DERECHA = "Derecha";
     private const string ABAJO = "Abajo";
@@ -120,8 +121,9 @@ public class PlayerScript : MonoBehaviour
             }
         }
         
-        if (Input.GetButtonDown("Fire1") && !pescando)
+        if (Input.GetButtonDown("Fire1") && !pescando && !recogiendo)
         {
+            
             Parar();
             if (ultimaPosicion == "Derecha")
             {
@@ -144,9 +146,9 @@ public class PlayerScript : MonoBehaviour
             
         }
         
-        if (Input.GetButtonDown("Fire1")&& pescando)
+        if (Input.GetButtonDown("Fire1")&& pescando && bobber.GetComponent<bobberScript>().enElAgua)
         {
-            if (!picado)
+            if (!picado && !recogiendo )
             {
                 
                 fishingGame.SetActive(true);

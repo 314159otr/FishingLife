@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class FishingMiniGame : MonoBehaviour
 {
-    List<Pez> peces = new List<Pez>();
+    int randomNumber;
+    [SerializeField] List<GameObject> peces;
     [SerializeField] GameObject player;
     [Header("Fishing Area")]
     [SerializeField] Transform topBounds;
@@ -38,13 +39,6 @@ public class FishingMiniGame : MonoBehaviour
     private void Start()
     {
         catchProgress = 0.3f;
-        Sprite[] abilityIconsAtlas = Resources.LoadAll<Sprite>("peces");
-        peces.Add(new Pez(abilityIconsAtlas.Single(s => s.name == "peces_0"), 1f, 1f));
-        peces.Add(new Pez(abilityIconsAtlas.Single(s => s.name == "peces_1"), 2f, 1f));
-        peces.Add(new Pez(abilityIconsAtlas.Single(s => s.name == "peces_2"), 1f, 2f));
-        peces.Add(new Pez(abilityIconsAtlas.Single(s => s.name == "peces_6"), 0.5f, 0.5f));
-        peces.Add(new Pez(abilityIconsAtlas.Single(s => s.name == "peces_4"), 3f, 3f));
-        peces.Add(new Pez(abilityIconsAtlas.Single(s => s.name == "peces_5"), 1.5f, 1f));
         setFish();
     }
     private void FixedUpdate()
@@ -69,10 +63,13 @@ public class FishingMiniGame : MonoBehaviour
             catchProgress += hookPower * Time.deltaTime;
             if (catchProgress>=1)
             {
-                player.GetComponent<PlayerScript>().picado=false;
+                
+                
                 gameObject.SetActive(false);
+                player.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_RecogerCaña_Derecha");
                 player.GetComponent<PlayerScript>().bobber.GetComponent<bobberScript>().Volver(player);
                 catchProgress = 0.3f;
+                peces[randomNumber].GetComponent<Pickup>().add();
                 setFish();
             }
         }
@@ -81,8 +78,8 @@ public class FishingMiniGame : MonoBehaviour
             catchProgress -= progressBarDecay * Time.deltaTime;
             if (catchProgress<=0)
             {
-                player.GetComponent<PlayerScript>().picado = false;
                 gameObject.SetActive(false);
+                player.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_RecogerCaña_Izquierda");
                 player.GetComponent<PlayerScript>().bobber.GetComponent<bobberScript>().Volver(player);
                 catchProgress = 0.3f;
                 setFish();
@@ -128,24 +125,12 @@ public class FishingMiniGame : MonoBehaviour
 
     public void setFish()
     {
-        int randomNumber = Random.Range(0, 6);
-        fishSprite.sprite = peces[randomNumber].sprite;
-        smoothMotion = peces[randomNumber].smoothMotion;
-        fishTimeRandomizer = peces[randomNumber].fishTimeRandomizer;
+        randomNumber = Random.Range(0, peces.Count());
+        fishSprite.sprite = peces[randomNumber].GetComponent<PezScript>().fishSprite.sprite;
+        smoothMotion = peces[randomNumber].GetComponent<PezScript>().smoothMotion;
+        fishTimeRandomizer = peces[randomNumber].GetComponent<PezScript>().fishTimeRandomizer;
 
     }
 }
-public class Pez
-{
-    public Sprite sprite;
-    public float smoothMotion;
-    public float fishTimeRandomizer;
-    
-    public Pez(Sprite s, float sm, float ftr)
-    {
-        sprite = s;
-        smoothMotion = sm;
-        fishTimeRandomizer = ftr;
-    }
 
-}
+
