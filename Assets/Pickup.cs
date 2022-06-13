@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     private Inventory inventory;
-    public GameObject itemButton;
+    public GameObject item;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class Pickup : MonoBehaviour
                 if (inventory.isFull[i]==false)
                 {
                     inventory.isFull[i] = true;
-                    Instantiate(itemButton, inventory.slots[i].transform, false);
+                    Instantiate(item.GetComponent<PezScript>().canvas, inventory.slots[i].transform, false);
                     Destroy(gameObject);
                     break;
                 }
@@ -30,13 +30,13 @@ public class Pickup : MonoBehaviour
     public void add()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-        Debug.Log(inventory.slots.Length);
         for (int i = 0; i < inventory.slots.Length; i++)
         {
             if (inventory.isFull[i] == false)
             {
                 inventory.isFull[i] = true;
-                Instantiate(itemButton, inventory.slots[i].transform, false);
+                Instantiate(item.GetComponent<PezScript>().canvas, inventory.slots[i].transform, false);
+                inventory.contenidos.Add(item);
                 break;
             }
         }

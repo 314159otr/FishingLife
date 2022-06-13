@@ -9,4 +9,5 @@ public class PezScript : MonoBehaviour
     public Transform fish;
     public float smoothMotion;
     public float fishTimeRandomizer;
+    public GameObject canvas;
 }

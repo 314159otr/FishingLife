@@ -232,7 +232,7 @@ Transform:
   m_Children:
   - {fileID: 1662690609}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &37861629
 MonoBehaviour:
@@ -310,6 +310,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 308070767}
+    - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
       propertyPath: itemButton
       value: 
       objectReference: {fileID: 7432407237544211092, guid: d9b57dde003dcce468068ec9f7922cea, type: 3}
@@ -317,6 +321,10 @@ PrefabInstance:
       propertyPath: fish
       value: 
       objectReference: {fileID: 91930272}
+    - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 7432407237544211092, guid: d9b57dde003dcce468068ec9f7922cea, type: 3}
     - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
       propertyPath: fishSprite
       value: 
@@ -1065,16 +1073,6 @@ CanvasRenderer:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3738817741196550237, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
   m_PrefabInstance: {fileID: 368817726}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &247685538 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3156741260694651487, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-  m_PrefabInstance: {fileID: 1653366911}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &247685539 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-  m_PrefabInstance: {fileID: 1653366911}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &308070767 stripped
 GameObject:
@@ -9708,6 +9706,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 227118343}
+    - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
       propertyPath: itemButton
       value: 
       objectReference: {fileID: 1354244028833495749, guid: 48a48465ffb2b234ba3e63603cd6343e, type: 3}
@@ -9715,6 +9717,10 @@ PrefabInstance:
       propertyPath: fish
       value: 
       objectReference: {fileID: 368817727}
+    - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1354244028833495749, guid: 48a48465ffb2b234ba3e63603cd6343e, type: 3}
     - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
       propertyPath: fishSprite
       value: 
@@ -9998,9 +10004,9 @@ RectTransform:
   m_Father: {fileID: 1171117939}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: -238}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -180, y: 40}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &486693240
@@ -10357,6 +10363,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 2139960098}
+    - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
       propertyPath: itemButton
       value: 
       objectReference: {fileID: 7359478017940711319, guid: b15bd94d457f6d24f9e2cf80be4a2a4b, type: 3}
@@ -10364,6 +10374,10 @@ PrefabInstance:
       propertyPath: fish
       value: 
       objectReference: {fileID: 604567905}
+    - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 7359478017940711319, guid: b15bd94d457f6d24f9e2cf80be4a2a4b, type: 3}
     - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
       propertyPath: fishSprite
       value: 
@@ -10452,6 +10466,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 1620451550}
+    - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
       propertyPath: itemButton
       value: 
       objectReference: {fileID: 3210139717702694625, guid: c6bafd4754775a344876bab2d302352f, type: 3}
@@ -10459,6 +10477,10 @@ PrefabInstance:
       propertyPath: fish
       value: 
       objectReference: {fileID: 634437640}
+    - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 3210139717702694625, guid: c6bafd4754775a344876bab2d302352f, type: 3}
     - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
       propertyPath: fishSprite
       value: 
@@ -10842,7 +10864,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &869212993
 GameObject:
@@ -11329,7 +11351,7 @@ RectTransform:
   - {fileID: 2071559326}
   - {fileID: 1781838894}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11517,7 +11539,7 @@ Transform:
   - {fileID: 634437640}
   - {fileID: 368817727}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1262060101
 GameObject:
@@ -11551,9 +11573,9 @@ RectTransform:
   m_Father: {fileID: 1171117939}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60, y: -238}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -60, y: 40}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1262060103
@@ -36120,7 +36142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1305320021
 MonoBehaviour:
@@ -36276,6 +36298,7 @@ MonoBehaviour:
   - {fileID: 1262060101}
   - {fileID: 2071559325}
   - {fileID: 1781838893}
+  contenidos: []
 --- !u!1 &1330061090
 GameObject:
   m_ObjectHideFlags: 0
@@ -36632,91 +36655,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3738817741196550237, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
   m_PrefabInstance: {fileID: 634437639}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1653366911
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3156741260694651487, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -5927347913165478768, guid: b364594733923b64c897851b56bdd992, type: 3}
-    - target: {fileID: 3156741260694651487, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_SortingOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156741260694651487, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738817741196550237, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_Name
-      value: Pez
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.0751069
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.4843802
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191408079908049399, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: itemButton
-      value: 
-      objectReference: {fileID: 7359478017940711319, guid: b15bd94d457f6d24f9e2cf80be4a2a4b, type: 3}
-    - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: fish
-      value: 
-      objectReference: {fileID: 247685539}
-    - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
-      propertyPath: fishSprite
-      value: 
-      objectReference: {fileID: 247685538}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
 --- !u!1 &1662690608
 GameObject:
   m_ObjectHideFlags: 3
@@ -36841,9 +36779,9 @@ RectTransform:
   m_Father: {fileID: 1171117939}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: -238}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 180, y: 40}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781838895
@@ -36946,9 +36884,9 @@ RectTransform:
   m_Father: {fileID: 1171117939}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: -238}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 60, y: 40}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2071559327
@@ -37026,7 +36964,7 @@ Transform:
   - {fileID: 1303854325}
   - {fileID: 1125700281}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2079033722
 MonoBehaviour:
@@ -37125,6 +37063,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 1016612263}
+    - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
       propertyPath: itemButton
       value: 
       objectReference: {fileID: 6694664262864967736, guid: b20f5a9aacedebc47bc457bc14d23bf9, type: 3}
@@ -37132,6 +37074,10 @@ PrefabInstance:
       propertyPath: fish
       value: 
       objectReference: {fileID: 2088532240}
+    - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 6694664262864967736, guid: b20f5a9aacedebc47bc457bc14d23bf9, type: 3}
     - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
       propertyPath: fishSprite
       value: 
@@ -37574,7 +37520,7 @@ Transform:
   - {fileID: 2105449763}
   - {fileID: 367166823}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2139960098 stripped
 GameObject:
@@ -37649,6 +37595,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 1730993835}
+    - target: {fileID: 8920246320852766099, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
       propertyPath: itemButton
       value: 
       objectReference: {fileID: 3327599305869641470, guid: 6d6bd70d8d6dad74cba0a8fcf9b39055, type: 3}
@@ -37656,6 +37606,10 @@ PrefabInstance:
       propertyPath: fish
       value: 
       objectReference: {fileID: 2529632250985997460}
+    - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 3327599305869641470, guid: 6d6bd70d8d6dad74cba0a8fcf9b39055, type: 3}
     - target: {fileID: 9204115231148351648, guid: c259bcec854c60340ad4409d118ce7e3, type: 3}
       propertyPath: fishSprite
       value: 
