@@ -66,7 +66,22 @@ public class FishingMiniGame : MonoBehaviour
                 
                 
                 gameObject.SetActive(false);
-                player.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_RecogerCaña_Derecha");
+                if (player.GetComponent<PlayerScript>().ultimaPosicion == "Derecha")
+                {
+                    player.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_RecogerCaña_Derecha");
+                }
+                else if (player.GetComponent<PlayerScript>().ultimaPosicion == "Izquierda")
+                {
+                    player.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_RecogerCaña_Izquierda");
+                }
+                else if (player.GetComponent<PlayerScript>().ultimaPosicion == "Abajo")
+                {
+                    player.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_RecogerCaña_Abajo");
+                }
+                else if (player.GetComponent<PlayerScript>().ultimaPosicion == "Arriba")
+                {
+                    player.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_RecogerCaña_Arriba");
+                }
                 player.GetComponent<PlayerScript>().bobber.GetComponent<bobberScript>().Volver(player);
                 catchProgress = 0.3f;
                 peces[randomNumber].GetComponent<Pickup>().add();
@@ -79,7 +94,22 @@ public class FishingMiniGame : MonoBehaviour
             if (catchProgress<=0)
             {
                 gameObject.SetActive(false);
-                player.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_RecogerCaña_Izquierda");
+                if (player.GetComponent<PlayerScript>().ultimaPosicion == "Derecha")
+                {
+                    player.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_RecogerCaña_Derecha");
+                }
+                else if (player.GetComponent<PlayerScript>().ultimaPosicion == "Izquierda")
+                {
+                    player.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_RecogerCaña_Izquierda");
+                }
+                else if (player.GetComponent<PlayerScript>().ultimaPosicion == "Abajo")
+                {
+                    player.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_RecogerCaña_Abajo");
+                }
+                else if (player.GetComponent<PlayerScript>().ultimaPosicion == "Arriba")
+                {
+                    player.GetComponent<PlayerScript>().CambiarDeAnimacion("Player_RecogerCaña_Arriba");
+                }
                 player.GetComponent<PlayerScript>().bobber.GetComponent<bobberScript>().Volver(player);
                 catchProgress = 0.3f;
                 setFish();

@@ -157,6 +157,7 @@ public class PlayerScript : MonoBehaviour
             }
             else
             {
+                Debug.Log("sasdfds");
                 bobber.GetComponent<bobberScript>().Volver(gameObject);
                 
                 if (ultimaPosicion == "Derecha")
@@ -189,12 +190,13 @@ public class PlayerScript : MonoBehaviour
         
     }
 
-    private void Mover(Vector2 vector2)
+    public void Mover(Vector2 vector2)
     {
         rb2d.velocity = vector2;
     }
-    private void Parar()
+    public void Parar()
     {
+        Debug.Log("paro");
         rb2d.velocity = new Vector2(0,0);
     }
     public void CambiarDeAnimacion(string animacionNueva)
