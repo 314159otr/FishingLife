@@ -28,7 +28,7 @@ public class bobberScript : MonoBehaviour
         direccion = jugador.GetComponent<PlayerScript>().ultimaPosicion;
         yield return new WaitForSeconds(0.3f);
         //lo pongo en una capa visible
-        GetComponent<SpriteRenderer>().sortingOrder = 0;
+        GetComponent<SpriteRenderer>().sortingOrder = 1;
         transform.position = new Vector2(jugador.position.x + .4f, jugador.position.y + 1f);
         if (direccion == "Derecha")
         {
