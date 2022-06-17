@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -15,7 +16,11 @@ public class PlayerScript : MonoBehaviour
     private bool pescando;
     public bool picado;
     public bool recogiendo;
+    public bool hablando;
     [SerializeField] GameObject fishingGame;
+    public int dinero = 0;
+    public TextMeshProUGUI dineroText;
+
 
     public string ultimaPosicion;
     
@@ -53,58 +58,38 @@ public class PlayerScript : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         bobberRef = Resources.Load("bobber");
+        ActualizarDinero();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        ultimoVectorMovimiento = vectorMovimiento;
-        vectorMovimiento.x = Input.GetAxisRaw("Horizontal") * Time.fixedDeltaTime * speed;
-        vectorMovimiento.y = Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime * speed;
-        if (!pescando)
+        if (!hablando)
         {
-            if (vectorMovimiento.x > 0)
+            ultimoVectorMovimiento = vectorMovimiento;
+            vectorMovimiento.x = Input.GetAxisRaw("Horizontal") * Time.fixedDeltaTime * speed;
+            vectorMovimiento.y = Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime * speed;
+            if (!pescando)
             {
-                CambiarDeAnimacion(ANDAR_DERECHA);
-                ultimaPosicion = DERECHA;
-            }
-            else if (vectorMovimiento.x < 0)
-            {
-                CambiarDeAnimacion(ANDAR_IZQUIERDA);
-                ultimaPosicion = IZQUIERDA;
-            }
-            else if (vectorMovimiento.y < 0)
-            {
-                CambiarDeAnimacion(ANDAR_ABAJO);
-                ultimaPosicion = ABAJO;
-            }
-            else if (vectorMovimiento.y > 0)
-            {
-                CambiarDeAnimacion(ANDAR_ARRIBA);
-                ultimaPosicion = ARRIBA;
-            }
-            else
-            {
-
-                if (ultimoVectorMovimiento.x > 0)
+                if (vectorMovimiento.x > 0)
                 {
-                    CambiarDeAnimacion(RESPIRAR_DERECHA);
+                    CambiarDeAnimacion(ANDAR_DERECHA);
                     ultimaPosicion = DERECHA;
                 }
-                else if (ultimoVectorMovimiento.x < 0)
+                else if (vectorMovimiento.x < 0)
                 {
-                    CambiarDeAnimacion(RESPIRAR_IZQUIERDA);
+                    CambiarDeAnimacion(ANDAR_IZQUIERDA);
                     ultimaPosicion = IZQUIERDA;
                 }
-                else if (ultimoVectorMovimiento.y < 0)
+                else if (vectorMovimiento.y < 0)
                 {
-                    CambiarDeAnimacion(RESPIRAR_ABAJO);
+                    CambiarDeAnimacion(ANDAR_ABAJO);
                     ultimaPosicion = ABAJO;
                 }
-                else if (ultimoVectorMovimiento.y > 0)
+                else if (vectorMovimiento.y > 0)
                 {
-                    CambiarDeAnimacion(RESPIRAR_ARRIBA);
+                    CambiarDeAnimacion(ANDAR_ARRIBA);
                     ultimaPosicion = ARRIBA;
                 }
                 else
@@ -112,74 +97,98 @@ public class PlayerScript : MonoBehaviour
 
                     if (ultimoVectorMovimiento.x > 0)
                     {
-                        CambiarDeAnimacion(ANDAR_ABAJO);
+                        CambiarDeAnimacion(RESPIRAR_DERECHA);
+                        ultimaPosicion = DERECHA;
+                    }
+                    else if (ultimoVectorMovimiento.x < 0)
+                    {
+                        CambiarDeAnimacion(RESPIRAR_IZQUIERDA);
+                        ultimaPosicion = IZQUIERDA;
+                    }
+                    else if (ultimoVectorMovimiento.y < 0)
+                    {
+                        CambiarDeAnimacion(RESPIRAR_ABAJO);
                         ultimaPosicion = ABAJO;
+                    }
+                    else if (ultimoVectorMovimiento.y > 0)
+                    {
+                        CambiarDeAnimacion(RESPIRAR_ARRIBA);
+                        ultimaPosicion = ARRIBA;
+                    }
+                    else
+                    {
+
+                        if (ultimoVectorMovimiento.x > 0)
+                        {
+                            CambiarDeAnimacion(ANDAR_ABAJO);
+                            ultimaPosicion = ABAJO;
+                        }
+
                     }
 
                 }
+            }
 
-            }
-        }
-        
-        if (Input.GetButtonDown("Fire1") && !pescando && !recogiendo)
-        {
-            
-            Parar();
-            if (ultimaPosicion == "Derecha")
+            if (Input.GetButtonDown("Fire1") && !pescando && !recogiendo)
             {
-                CambiarDeAnimacion(PESCAR_DERECHA);
-            }
-            else if (ultimaPosicion == "Izquierda")
-            {
-                CambiarDeAnimacion(PESCAR_IZQUIERDA);
-            }
-            else if (ultimaPosicion == "Abajo")
-            {
-                CambiarDeAnimacion(PESCAR_ABAJO);
-            }
-            else if (ultimaPosicion == "Arriba")
-            {
-                CambiarDeAnimacion(PESCAR_ARRIBA);
-            }
-            bobber = (GameObject)Instantiate(bobberRef);
-            bobber.GetComponent<bobberScript>().Lanzar(transform);
-            
-        }
-        
-        if (Input.GetButtonDown("Fire1")&& pescando && bobber.GetComponent<bobberScript>().enElAgua)
-        {
-            if (!picado && !recogiendo )
-            {
-                
-                fishingGame.SetActive(true);
-                fishingGame.GetComponent<Transform>().position = gameObject.GetComponent<Transform>().position-new Vector3(5f,0f,0f);
 
-            }
-            else
-            {
-                Debug.Log("sasdfds");
-                bobber.GetComponent<bobberScript>().Volver(gameObject);
-                
+                Parar();
                 if (ultimaPosicion == "Derecha")
                 {
-                    CambiarDeAnimacion(RECOGERCAÑA_DERECHA);
+                    CambiarDeAnimacion(PESCAR_DERECHA);
                 }
                 else if (ultimaPosicion == "Izquierda")
                 {
-                    CambiarDeAnimacion(RECOGERCAÑA_IZQUIERDA);
+                    CambiarDeAnimacion(PESCAR_IZQUIERDA);
                 }
                 else if (ultimaPosicion == "Abajo")
                 {
-                    CambiarDeAnimacion(RECOGERCAÑA_ABAJO);
+                    CambiarDeAnimacion(PESCAR_ABAJO);
                 }
                 else if (ultimaPosicion == "Arriba")
                 {
-                    CambiarDeAnimacion(RECOGERCAÑA_ARRIBA);
+                    CambiarDeAnimacion(PESCAR_ARRIBA);
                 }
+                bobber = (GameObject)Instantiate(bobberRef);
+                bobber.GetComponent<bobberScript>().Lanzar(transform);
+
             }
-            
+
+            if (Input.GetButtonDown("Fire1") && pescando && bobber.GetComponent<bobberScript>().enElAgua)
+            {
+                if (!picado && !recogiendo)
+                {
+
+                    fishingGame.SetActive(true);
+                    fishingGame.GetComponent<Transform>().position = gameObject.GetComponent<Transform>().position - new Vector3(5f, 0f, 0f);
+
+                }
+                else
+                {
+                    bobber.GetComponent<bobberScript>().Volver(gameObject);
+
+                    if (ultimaPosicion == "Derecha")
+                    {
+                        CambiarDeAnimacion(RECOGERCAÑA_DERECHA);
+                    }
+                    else if (ultimaPosicion == "Izquierda")
+                    {
+                        CambiarDeAnimacion(RECOGERCAÑA_IZQUIERDA);
+                    }
+                    else if (ultimaPosicion == "Abajo")
+                    {
+                        CambiarDeAnimacion(RECOGERCAÑA_ABAJO);
+                    }
+                    else if (ultimaPosicion == "Arriba")
+                    {
+                        CambiarDeAnimacion(RECOGERCAÑA_ARRIBA);
+                    }
+                }
+
+            }
+            pescando = bobber != null;
         }
-        pescando = bobber != null;
+       
     }
     private void FixedUpdate()
     {
@@ -196,7 +205,6 @@ public class PlayerScript : MonoBehaviour
     }
     public void Parar()
     {
-        Debug.Log("paro");
         rb2d.velocity = new Vector2(0,0);
     }
     public void CambiarDeAnimacion(string animacionNueva)
@@ -206,6 +214,10 @@ public class PlayerScript : MonoBehaviour
         animator.Play(animacionNueva);
 
         animacionActual = animacionNueva;
+    }
+    public void ActualizarDinero()
+    {
+        dineroText.text = dinero.ToString() +"$";
     }
    
 }

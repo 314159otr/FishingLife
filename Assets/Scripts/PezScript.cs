@@ -10,4 +10,5 @@ public class PezScript : MonoBehaviour
     public float smoothMotion;
     public float fishTimeRandomizer;
     public GameObject canvas;
+    public int precio;
 }
