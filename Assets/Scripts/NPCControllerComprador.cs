@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCController : MonoBehaviour
+public class NPCControllerComprador : MonoBehaviour
 {
     [SerializeField] Dialog dialog;
     private bool dentro;
@@ -55,6 +55,7 @@ public class NPCController : MonoBehaviour
                 }
                 
             }
+            Interact();
         }
         if (dentro && Input.GetKeyDown(KeyCode.Z))
         {

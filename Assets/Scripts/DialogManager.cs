@@ -23,7 +23,7 @@ public class DialogManager : MonoBehaviour
     public void ShowDialog(Dialog dialog)
     {
         this.dialog = dialog;
-        if (Input.GetKeyDown(KeyCode.Z)&& !escribiendo)
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X) )&& !escribiendo)
         {
             dialogBox.SetActive(true);
             if (currentLine < dialog.Lines.Count)
