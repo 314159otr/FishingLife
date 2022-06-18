@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FishingMiniGame : MonoBehaviour
 {
@@ -23,23 +24,29 @@ public class FishingMiniGame : MonoBehaviour
     float fishTargetPosition=1f;
 
     [Header("Hook Settings")]
+    [SerializeField] Image hookCanvas;
     [SerializeField] Transform hook;
-    [SerializeField] float hookSize = .15f;
-    [SerializeField] float hookSpeed = .1f;
-    [SerializeField] float hookGravity = .05f;
+    [SerializeField] SpriteRenderer hookSprite;
+    [SerializeField] float hookSize ;
+    [SerializeField] float hookSpeed ;
+    [SerializeField] float hookGravity ;
     float hookPosition;
     float hookPullVelocity;
 
     [Header("Progress Bar Settings")]
+    [SerializeField] Image baitCanvas;
     [SerializeField] Transform progressBarContainer;
-    [SerializeField] float hookPower=0.5f;
-    [SerializeField] float progressBarDecay=0.1f;
+    [SerializeField] float hookPower;
+    [SerializeField] float progressBarDecay;
     float catchProgress;
 
     private void Start()
     {
+        setBait();
         catchProgress = 0.3f;
         setFish();
+        setHook();
+        
     }
     private void FixedUpdate()
     {
@@ -86,6 +93,8 @@ public class FishingMiniGame : MonoBehaviour
                 catchProgress = 0.3f;
                 peces[randomNumber].GetComponent<Pickup>().add();
                 setFish();
+                setHook();
+                setBait();
             }
         }
         else
@@ -113,6 +122,8 @@ public class FishingMiniGame : MonoBehaviour
                 player.GetComponent<PlayerScript>().bobber.GetComponent<bobberScript>().Volver(player);
                 catchProgress = 0.3f;
                 setFish();
+                setHook();
+                setBait();
             }
         }
         catchProgress = Mathf.Clamp(catchProgress, 0, 1);
@@ -159,6 +170,20 @@ public class FishingMiniGame : MonoBehaviour
         fishSprite.sprite = peces[randomNumber].GetComponent<PezScript>().fishSprite.sprite;
         smoothMotion = peces[randomNumber].GetComponent<PezScript>().smoothMotion;
         fishTimeRandomizer = peces[randomNumber].GetComponent<PezScript>().fishTimeRandomizer;
+
+    }
+    public void setHook()
+    {
+        hookSprite.sprite =hookCanvas.sprite;
+        hookSize = hookCanvas.GetComponent<Hook>().hookSize;
+        hookSpeed = hookCanvas.GetComponent<Hook>().hookSpeed;
+        hookGravity = hookCanvas.GetComponent<Hook>().hookGravity;
+
+    }
+    public void setBait()
+    {
+        hookPower = baitCanvas.GetComponent<Bait>().hookPower;
+        progressBarDecay = baitCanvas.GetComponent<Bait>().progressBarDecay;
 
     }
 }

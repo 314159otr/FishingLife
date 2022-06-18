@@ -21,7 +21,7 @@ public class ClockScript : MonoBehaviour
     public GameObject[] lights;
     void Start()
     {
-        hours = 21;
+        hours = 8;
         ppv = gameObject.GetComponent<Volume>();
     }
     void FixedUpdate() 
