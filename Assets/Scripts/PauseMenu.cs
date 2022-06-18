@@ -10,9 +10,10 @@ public class PauseMenu : MonoBehaviour
     public GameObject optionsMenuUI;
     public GameObject dialogo;
     bool habiaDialogo;
+    public GameObject fondoCompra;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !fondoCompra.activeSelf)
         {
             if (GameIsPaused)
             {
@@ -33,6 +34,12 @@ public class PauseMenu : MonoBehaviour
                 }
             }
         }
+        else if (Input.GetKeyDown(KeyCode.Escape) && fondoCompra.activeSelf)
+        {
+            fondoCompra.SetActive(false);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>().hablando = false;
+        }
+
     }
     public void Resume()
     {

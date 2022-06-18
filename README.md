@@ -1,2 +1,2 @@
 # FishingLife
- Test
+ Pulsar Z para interactuar con los NPC

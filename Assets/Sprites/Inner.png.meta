@@ -794,6 +794,9 @@ TextureImporter:
   - first:
       213: -5141246778986927475
     second: mesa
+  - first:
+      213: -4066390512572520992
+    second: cama
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -6426,7 +6429,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6434,6 +6437,27 @@ TextureImporter:
       bones: []
       spriteID: d8aecd34b4f96a8b0800000000000000
       internalID: -5141246778986927475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cama
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 336
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e5a81c9f574197c0800000000000000
+      internalID: -4066390512572520992
       vertices: []
       indices: 
       edges: []
