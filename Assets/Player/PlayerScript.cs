@@ -209,7 +209,7 @@ public class PlayerScript : MonoBehaviour
     }
     public void CambiarDeAnimacion(string animacionNueva)
     {
-        if (animacionActual == animacionNueva) return;
+        if (animacionActual == animacionNueva) return; //si la animacion se esta reproduciendo no hace nada para no cortarla y volverla a poner
 
         animator.Play(animacionNueva);
 
